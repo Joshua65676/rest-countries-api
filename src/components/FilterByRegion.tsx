@@ -4,8 +4,8 @@ const FilterByRegion: React.FC = () => {
 
   return (
     <div>
-      <div className="flex space-x-2 border border-white shadow -ml-[355px] w-60">
-        <span className="p-2 pl-10">Filter by region</span>
+      <div className="flex border border-white shadow -ml-[300px] w-48 bg-White rounded-md">
+        <span className="p-2 pl-3 font-medium">Filter by region</span>
       </div>
     </div>
   )

@@ -83,21 +83,22 @@ interface Country {
       <div className=''>
        <div className="flex justify-between">
         {/* search input */}
-        <div className='relative border border-white shadow w-96'>
-          <GoSearch className='absolute translate-y-[70%] w-5 ml-9'/>
+        <div className='relative border border-white shadow w-96 bg-White'>
+          <GoSearch className='absolute translate-y-[85%] w-5 ml-9 text-DarkGray'/>
           <input
            type='text'
            placeholder='Search for a country....'
            value={countrySearch}
-           className='box-border p-2 pl-16 w-96'
+           className='box-border p-3 pl-16 text-sm w-96 text-DarkGray'
            onChange={(e) => setCountrySearch(e.target.value)}
           />
         </div>
         {/* filter input */}
-        <div className="">
+        <div className="-mr-12">
             <FilterByRegion />
         </div>
        </div>
+       
         <div className="">
             <RegionSearchApi regions={regions} setSelectedRegion={setSelectedRegion} />
         </div>
@@ -108,13 +109,17 @@ interface Country {
       <div className=''>
          <ul className='grid grid-cols-4 gap-10'>
            {filteredCountries.map((country) => (
-             <li key={country.cca3} className='w-48 border border-white shadow '>
-               <img src={country.flags.png} alt={`Flag of ${country.name.common}`} width="190" />
-               <div className="p-2 pl-3">
-                 <h4 className=''>{country.name.common}</h4>
-                 <p className=''>Population: {country.population}</p>
-                 <p className=''>Region: {country.region}</p>
-                 <p className=''>Capital: {country.capital}</p>
+             <li key={country.cca3} className='w-[14.5rem] border border-white shadow '>
+               <img src={country.flags.png} alt={`Flag of ${country.name.common}`} className='w-[14.5rem] h-36' />
+               <div className="p-3 pl-5 space-y-2">
+                <div className="mt-3 ">
+                 <h4 className='font-bold text-VeryDarkBlue'>{country.name.common}</h4>
+                </div>
+                <div className='space-y-1'>
+                 <p className='text-sm font-medium'>Population: <span className='text-DarkGray'>{country.population}</span></p>
+                 <p className='text-sm font-medium'>Region: <span className='text-DarkGray'>{country.region}</span></p>
+                 <p className='text-sm font-medium'>Capital: <span className='text-DarkGray'>{country.capital}</span></p>
+                </div>
                </div>
              </li>
            ))}
