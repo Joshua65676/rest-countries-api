@@ -19,14 +19,14 @@ const RegionSearchApi: React.FC<RegionButtonsProps> = ({ regions, setSelectedReg
    
       <div className="-mt-10" onClick={toggleIcon}>
           {isOpen ?
-            <MdKeyboardArrowUp className='translate-y-[50%] w-5 ml-52' />
+            <MdKeyboardArrowUp className='translate-y-[50%] w-5 ml-56 dark:text-VeryLightGray' />
             :
-            <div className="space-y-8">
-              <MdOutlineKeyboardArrowDown className='translate-y-[50%] w-5 ml-52' />
-              <div className='absolute z-[10000] border border-White shadow w-48 bg-White ml-14 rounded-lg'>
+            <div className="space-y-6">
+              <MdOutlineKeyboardArrowDown className='translate-y-[50%] w-5 ml-56 dark:text-VeryLightGray' />
+              <div className='absolute z-[10000] border border-White shadow w-48 bg-White ml-[4.5rem] rounded-lg dark:bg-DarkBlue dark:border-DarkBlue'>
                 {regions.map(region => (
                 <button key={region} onClick={() => setSelectedRegion(region)} className='flex flex-col'>
-                 <div className='p-2 pl-10'>
+                 <div className='p-2 pl-6 dark:text-VeryLightGray'>
                   {region}
                  </div>
                 </button>
