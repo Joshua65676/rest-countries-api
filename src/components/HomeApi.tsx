@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { GoSearch } from "react-icons/go";
 import FilterByRegion from './FilterByRegion';
 import RegionSearchApi from './RegionSearchApi';
+import { Link } from 'react-router-dom';
 
 interface Country {
     name: {
@@ -35,7 +36,8 @@ interface Country {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const [selectedRegion, setSelectedRegion] = useState<string>('');
-
+    // const navigate = useNavigate();
+    
     useEffect(() => {
         const fetchCountryData = async () => {
           try {
@@ -109,10 +111,11 @@ interface Country {
       <div className=''>
          <ul className='grid grid-cols-4 gap-10'>
            {filteredCountries.map((country) => (
+            <Link to={`/country/${country.name.common}`}>
              <li key={country.cca3} className='w-[15.5rem] border border-white shadow dark:bg-DarkBlue dark:border-DarkBlue rounded-md'>
                <img src={country.flags.png} alt={`Flag of ${country.name.common}`} className='w-[15.5rem] h-48 rounded-t-md' />
                <div className="h-40 p-2 pl-5 space-y-2">
-                <div className="mt-3 ">
+                <div className="mt-3">
                  <h4 className='font-bold text-VeryDarkBlue dark:text-VeryLightGray'>{country.name.common}</h4>
                 </div>
                 <div className='space-y-1'>
@@ -122,6 +125,7 @@ interface Country {
                 </div>
                </div>
              </li>
+            </Link>
            ))}
          </ul>
       </div>
