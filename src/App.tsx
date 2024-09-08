@@ -10,8 +10,8 @@ function App() {
     <>
       <div className="space-y-10">
             {/* NavBar */}
-        <nav className="w-screen shadow -ml-[47px] h-20 -mt-10 bg-White dark:bg-DarkBlue dark:text-White">
-         <div className="p-[2rem] flex justify-between max-w-[1280px] ml-24">
+        <nav className="lg:w-[105.5%] md:w-[111%] xm:w-max sm:w-max shadow -ml-[47px] h-20 -mt-10 bg-White dark:bg-DarkBlue dark:text-White">
+         <div className="p-[2rem] flex justify-between max-w-[1280px] lg:ml-24 lg:space-x-[rem] xm:space-x-[7rem] sm:space-x-14">
           <div className="">
             <h1 className="text-xl font-bold text-VeryDarkBlues dark:text-White">Where in the world?</h1>
           </div>

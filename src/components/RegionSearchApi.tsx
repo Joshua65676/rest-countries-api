@@ -15,7 +15,7 @@ const RegionSearchApi: React.FC<RegionButtonsProps> = ({ regions, setSelectedReg
     };
 
   return (
-   <div className='ml-[974px]'>
+   <div className='lg:ml-[974px] md:ml-[385px] xm:-ml-[10.5rem] sm:-ml-[10.5rem] mt-1 lg:mt-0 md:mt-0'>
    
       <div className="-mt-10" onClick={toggleIcon}>
           {isOpen ?
